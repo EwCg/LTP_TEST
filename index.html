@@ -1,91 +1,181 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Tribune IESEG Paris</title>
+    <title>Accueil - La Tribune IESEG Paris</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #011734;
-            --gold: #FECB01;
-            --off-white: #F8F9FA;
-        }
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--off-white);
-            color: var(--navy);
-        }
-        h1, h2, h3, h4, .serif {
-            font-family: 'Merriweather', serif;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 7)); }
-        }
-        .animate-infinite-scroll {
-            animation: scroll 40s linear infinite;
-        }
-        .animate-infinite-scroll:hover {
-            animation-play-state: paused;
-        }
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://elfsightcdn.com/platform.js" async></script>
 
-        /* Masquage discret du branding Elfsight si possible par sélecteur CSS */
-        a[href*="elfsight.com"], 
-        [class*="elfsight-app"] > a {
-            display: none !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            pointer-events: none !important;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #011734;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #000d1f;
-        }
-    </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        navy: '#011734',
-                        gold: '#FECB01',
-                        'off-white': '#F8F9FA',
-                    }
+                    colors: { navy: '#011734', gold: '#FECB01', 'off-white': '#F8F9FA', 'navy-light': '#0a2342' },
+                    fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Merriweather', 'serif'] }
                 }
             }
         }
     </script>
-    <!-- External Widgets Scripts -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <script type="text/javascript" src="https://platform.linkedin.com/in.js" async></script>
+    <style>
+        :root { --navy: #011734; --gold: #FECB01; }
+        body { background-color: #F8F9FA; color: var(--navy); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-infinite-scroll { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+        .animate-infinite-scroll:hover { animation-play-state: paused; }
+        /* Masquage discret pub Elfsight */
+        a[href*="elfsight.com"] { display: none !important; }
+    </style>
 <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
   }
 }
 </script>
 </head>
-<body>
-    <div id="root"></div>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-navy text-white shadow-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-1 flex justify-start items-center">
+                    <a href="https://www.ieseg.fr" target="_blank" class="hover:opacity-80 transition-opacity">
+                        <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/12%20(3).png" alt="IÉSEG Logo" class="h-10 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gold font-bold border-b-2 border-gold pb-1">Accueil</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors font-medium">À Propos</a>
+                    <a href="events.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Événements</a>
+                    <a href="articles.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Articles</a>
+                    <a href="social.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Social</a>
+                </div>
+
+                <div class="flex-1 flex justify-end items-center space-x-4">
+                    <a href="https://forms.gle/your-form-id" target="_blank" class="hidden lg:block bg-gold text-navy px-5 py-2 rounded-full font-bold hover:bg-white transition-all shadow-md">Rejoignez-nous</a>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white hover:text-gold">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-t border-white/10 p-4 space-y-2">
+            <a href="index.html" class="block py-2 text-gold font-bold">Accueil</a>
+            <a href="about.html" class="block py-2 text-white hover:text-gold">À Propos</a>
+            <a href="events.html" class="block py-2 text-white hover:text-gold">Événements</a>
+            <a href="articles.html" class="block py-2 text-white hover:text-gold">Articles</a>
+            <a href="social.html" class="block py-2 text-white hover:text-gold">Social</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow animate-in fade-in duration-700">
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/milky-way.jpg" class="w-full h-full object-cover" alt="Hero Background">
+                <div class="absolute inset-0 bg-navy/70 mix-blend-multiply"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <div class="max-w-2xl">
+                    <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Trouvez Votre Voix, <br/><span class="text-gold">Inspirez le Monde.</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-10 leading-relaxed font-light">
+                        La Tribune IÉSEG est l'association de référence pour l'art oratoire, 
+                        le débat parlementaire et l'éloquence au sein de l'IÉSEG School of Management.
+                    </p>
+                    <a href="events.html" class="inline-block border-2 border-gold text-gold px-8 py-3 rounded-full font-bold hover:bg-gold hover:text-navy transition-all">
+                        Découvrir nos formats
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infinite Carousel -->
+        <section class="bg-navy py-12 overflow-hidden border-t border-white/5">
+            <div class="animate-infinite-scroll flex gap-8">
+                <!-- Using images from constants.ts -->
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Amélie_Oudeacastera.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Antoine_discours.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Arthur_discour.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Bureau.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Emrys.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/photo_bar.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <!-- Duplicate for loop -->
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Amélie_Oudeacastera.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Antoine_discours.jpeg" class="w-[250px] h-[180px] rounded-xl object-cover opacity-60 hover:opacity-100 transition-opacity">
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 text-center">
+                <div class="p-8 hover:bg-off-white rounded-2xl transition-colors">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-gold"><i data-lucide="award" class="w-8 h-8"></i></div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Excellence</h3>
+                    <p class="text-gray-600">Champions de France de débat 2021. Nous visons le plus haut niveau.</p>
+                </div>
+                <div class="p-8 hover:bg-off-white rounded-2xl transition-colors">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-gold"><i data-lucide="users" class="w-8 h-8"></i></div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Transmission</h3>
+                    <p class="text-gray-600">Formation régulière de nos membres pour assurer la relève.</p>
+                </div>
+                <div class="p-8 hover:bg-off-white rounded-2xl transition-colors">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-gold"><i data-lucide="book-open" class="w-8 h-8"></i></div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Engagement</h3>
+                    <p class="text-gray-600">Un espace de liberté et de débat pour les leaders de demain.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Widget -->
+        <section class="py-24 bg-off-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="font-serif text-4xl font-bold mb-12">Actualités en Direct</h2>
+                <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden min-h-[400px]">
+                    <div class="elfsight-app-f74a0c0e-f46a-4dea-acc8-aeb8b742d84e" data-elfsight-app-lazy></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 mb-8">
+            <div class="col-span-1">
+                <h4 class="font-serif text-2xl font-bold mb-4">LA TRIBUNE <span class="text-gold">IESEG</span></h4>
+                <p class="text-gray-400 text-sm">Association d'art oratoire de l'IÉSEG School of Management.</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-gold mb-4 uppercase text-xs tracking-wider">Contact</h5>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> latribune@ieseg.fr</li>
+                    <li>Campus Paris : La Défense</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-gold mb-4 uppercase text-xs tracking-wider">Social</h5>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/company/la-tribune-ieseg" target="_blank" class="hover:text-gold"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="https://www.instagram.com/latribune_iesegparis" target="_blank" class="hover:text-gold"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-500 border-t border-white/10 pt-8">
+            &copy; 2024 La Tribune IESEG Paris.
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>

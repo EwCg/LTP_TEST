@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - La Tribune IESEG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#011734', gold: '#FECB01', 'off-white': '#F8F9FA' }, fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Merriweather', 'serif'] } } }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen bg-off-white">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-navy text-white shadow-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0"><img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/12%20(3).png" alt="Logo" class="h-10 md:h-12 w-auto object-contain"></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Accueil</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors font-medium">À Propos</a>
+                    <a href="events.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Événements</a>
+                    <a href="articles.html" class="text-gold font-bold border-b-2 border-gold pb-1">Articles</a>
+                    <a href="social.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Social</a>
+                </div>
+                <div class="flex-1 flex justify-end items-center space-x-4">
+                     <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white hover:text-gold"><i data-lucide="menu" class="w-8 h-8"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-t border-white/10 p-4 space-y-2">
+            <a href="index.html" class="block py-2 text-white hover:text-gold">Accueil</a>
+            <a href="articles.html" class="block py-2 text-gold font-bold">Articles</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow animate-in fade-in duration-700">
+        <!-- Header -->
+        <section class="bg-navy py-20 text-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h1 class="font-serif text-5xl font-bold mb-6">Nos <span class="text-gold">Analyses</span> & Articles</h1>
+                <p class="text-xl text-gray-400 font-light max-w-2xl">Décryptage de l'actualité, techniques de rhétorique et retours d'expérience.</p>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="max-w-7xl mx-auto px-4 -mt-12 mb-20">
+            <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507537362145-9f2382e03ecd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="flex items-center gap-2 text-gold font-bold text-xs uppercase tracking-widest mb-4"><i data-lucide="book-open" class="w-4 h-4"></i> À la une</div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-6">L'Art de la Contradiction : Pourquoi débattre est essentiel</h2>
+                    <p class="text-gray-600 text-lg mb-8">Dans un monde de plus en plus polarisé, apprendre à écouter l'autre et à construire une réponse argumentée est une compétence vitale.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center text-navy font-bold">A</div>
+                            <div class="text-sm"><div class="font-bold text-navy">Alexandre Dupont</div><div class="text-xs text-gray-400">12/03/2024</div></div>
+                        </div>
+                        <a href="article.html?id=art-de-la-contradiction" class="bg-navy text-gold px-6 py-2 rounded-full font-bold text-sm hover:bg-gold hover:text-navy transition-colors">Lire l'article</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Grid -->
+        <section class="max-w-7xl mx-auto px-4 mb-12 flex flex-wrap gap-4 border-b border-gray-200 pb-8">
+            <div class="relative flex-grow md:flex-grow-0 md:w-96">
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></i>
+                <input type="text" placeholder="Rechercher..." class="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-gold">
+            </div>
+            <button class="bg-gold text-navy px-4 py-2 rounded-lg font-bold text-sm">Tous</button>
+            <button class="bg-white text-gray-500 px-4 py-2 rounded-lg font-bold text-sm border border-gray-200 hover:border-gold hover:text-navy transition-all">Débat</button>
+            <button class="bg-white text-gray-500 px-4 py-2 rounded-lg font-bold text-sm border border-gray-200 hover:border-gold hover:text-navy transition-all">Rhétorique</button>
+        </section>
+
+        <!-- Articles Grid -->
+        <section class="max-w-7xl mx-auto px-4 pb-24 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Article 2 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover hover:scale-110 transition-transform"></div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-3 text-navy">Le Débat Parlementaire : Un sport de haut niveau</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">Entre adrénaline et structure rigoureuse, retour sur les coulisses de notre victoire au championnat.</p>
+                    <a href="article.html?id=debat-parlementaire-sport-haut-niveau" class="flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors">Lire la suite <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover hover:scale-110 transition-transform"></div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-3 text-navy">Rhétorique et Climat</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">Comment les figures de style peuvent-elles aider à transformer des données scientifiques froides en une action concrète ?</p>
+                    <a href="article.html?id=rhetorique-et-climat" class="flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors">Lire la suite <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1499209974431-9dac3adaf471?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover hover:scale-110 transition-transform"></div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-3 text-navy">Le silence, cet outil méconnu</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">Apprendre à ne rien dire pour mieux se faire entendre. Une analyse de la puissance des pauses.</p>
+                    <a href="article.html?id=silence-outil-meconnu" class="flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors">Lire la suite <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover hover:scale-110 transition-transform"></div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-3 text-navy">Cicéron vs IA</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">La machine pourra-t-elle un jour émouvoir ? L'âme d'un discours réside-t-elle dans les mots ?</p>
+                    <a href="article.html?id=ciceron-vs-ia" class="flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors">Lire la suite <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-navy text-white pt-16 pb-8 text-center"><p class="text-gray-500 text-sm">&copy; 2024 La Tribune IESEG.</p></footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
