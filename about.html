@@ -21,7 +21,14 @@
     <nav class="sticky top-0 z-50 bg-navy text-white shadow-lg border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex-shrink-0"><img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/12%20(3).png" alt="Logo" class="h-10 md:h-12 w-auto object-contain"></a>
+                <!-- LEFT: Logo with flex-1 -->
+                <div class="flex-1 flex justify-start items-center">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">
+                        <img src="https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/12%20(3).png" alt="Logo" class="h-10 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+                
+                <!-- CENTER: Links -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Accueil</a>
                     <a href="about.html" class="text-gold font-bold border-b-2 border-gold pb-1">À Propos</a>
@@ -29,8 +36,10 @@
                     <a href="articles.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Articles</a>
                     <a href="social.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Social</a>
                 </div>
+
+                <!-- RIGHT: Actions with flex-1 -->
                 <div class="flex-1 flex justify-end items-center space-x-4">
-                    <a href="https://forms.gle/your-form-id" target="_blank" class="hidden lg:block bg-gold text-navy px-5 py-2 rounded-full font-bold hover:bg-white transition-all">Rejoignez-nous</a>
+                    <a href="https://forms.gle/your-form-id" target="_blank" class="hidden lg:block bg-gold text-navy px-5 py-2 rounded-full font-bold hover:bg-white transition-all shadow-md">Rejoignez-nous</a>
                     <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white hover:text-gold"><i data-lucide="menu" class="w-8 h-8"></i></button>
                 </div>
             </div>
