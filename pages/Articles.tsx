@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostCard from '../components/BlogPostCard';
 import { MOCK_ARTICLES } from '../constants';
-import { Search, Filter, BookOpen } from 'lucide-react';
+import { Search, Filter, BookOpen, PlayCircle } from 'lucide-react';
 
 const Articles: React.FC = () => {
   const featuredArticle = MOCK_ARTICLES[0];
@@ -29,12 +29,19 @@ const Articles: React.FC = () => {
       {/* Featured Article Section */}
       <section className="max-w-7-xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 mb-20">
         <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
-          <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden">
+          <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative group">
             <img 
               src={featuredArticle.coverImage} 
               alt={featuredArticle.title}
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
+            {featuredArticle.youtubeId && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="bg-red-600/90 text-white p-4 rounded-full shadow-lg transform group-hover:scale-110 transition-transform">
+                        <PlayCircle size={32} fill="currentColor" />
+                    </div>
+                </div>
+            )}
           </div>
           <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
             <div className="flex items-center gap-2 text-gold font-bold text-xs uppercase tracking-widest mb-4">

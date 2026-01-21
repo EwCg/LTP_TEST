@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '../types';
-import { User, Calendar, ArrowRight } from 'lucide-react';
+import { User, Calendar, ArrowRight, PlayCircle } from 'lucide-react';
 
 interface Props {
   article: Partial<Article>;
@@ -12,12 +12,17 @@ interface Props {
 const BlogPostCard: React.FC<Props> = ({ article, isPreview = false }) => {
   return (
     <div className={`bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 ${!isPreview ? 'hover:-translate-y-2 hover:shadow-2xl' : ''}`}>
-      <div className="h-48 overflow-hidden relative">
+      <div className="h-48 overflow-hidden relative group">
         <img 
           src={article.coverImage || 'https://picsum.photos/seed/default/800/400'} 
           alt={article.title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
+        {article.youtubeId && (
+            <div className="absolute bottom-4 left-4 bg-red-600 text-white p-2 rounded-full shadow-lg z-10 flex items-center justify-center">
+                <PlayCircle size={16} fill="currentColor" />
+            </div>
+        )}
         {isPreview && (
           <div className="absolute top-4 right-4 bg-gold text-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">
             Aperçu

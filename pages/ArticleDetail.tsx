@@ -53,6 +53,23 @@ const ArticleDetail: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-500 italic mb-12 border-l-4 border-gold pl-6 leading-relaxed">
             {article.excerpt}
           </p>
+          
+          {/* YouTube Integration */}
+          {article.youtubeId && (
+            <div className="my-12">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl bg-black">
+                <iframe 
+                  src={`https://www.youtube.com/embed/${article.youtubeId}`} 
+                  title={article.title} 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowFullScreen 
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          )}
+
           <div className="text-gray-800 leading-relaxed space-y-8 text-lg md:text-xl">
             {article.content.split('\n').map((paragraph, i) => (
               <p key={i}>{paragraph}</p>

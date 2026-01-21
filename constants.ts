@@ -83,9 +83,11 @@ export const MOCK_ARTICLES: Article[] = [
     title: "Le Débat Parlementaire : Un sport de haut niveau",
     author: "Sophie Martin",
     excerpt: "Entre adrénaline et structure rigoureuse, retour sur les coulisses de notre victoire au championnat de France 2021.",
+    youtubeId?:"https://www.youtube.com/watch?v=4nelubZ7Zf4"
     content: "Le championnat de France de débat parlementaire n'est pas qu'une affaire de mots, c'est une épreuve d'endurance mentale. Pendant des mois, nos équipes se sont entraînées à analyser des motions complexes en moins de 15 minutes. Lors de la finale de 2021, la tension était palpable. Chaque argument devait être pesé, chaque envolée lyrique justifiée. Cette victoire a marqué un tournant pour La Tribune, prouvant que l'IÉSEG a sa place parmi l'élite de l'éloquence française. Ce succès repose sur une méthode de travail collective et un soutien indéfectible entre les membres du bureau et les orateurs.",
     coverImage: "https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=800",
-    date: "05/02/2024"
+    date: "05/02/2024",
+    youtubeId: "4nelubZ7Zf4"
   },
   {
     slug: "rhetorique-et-climat",

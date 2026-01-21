@@ -15,6 +15,7 @@ export interface Article {
   content: string;
   coverImage: string;
   date: string;
+  youtubeId?: string;
 }
 
 export interface Event {
