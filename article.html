@@ -28,6 +28,8 @@
                 <!-- CENTER -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Accueil</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors font-medium">À Propos</a>
+                    <a href="events.html" class="text-gray-300 hover:text-gold transition-colors font-medium">Événements</a>
                     <a href="articles.html" class="text-gold font-bold border-b-2 border-gold pb-1">Articles</a>
                 </div>
 
@@ -75,7 +77,8 @@
             date: "05/02/2024",
             excerpt: "Entre adrénaline et structure rigoureuse, retour sur les coulisses de notre victoire au championnat de France 2021.",
             content: "Le championnat de France de débat parlementaire n'est pas qu'une affaire de mots, c'est une épreuve d'endurance mentale. Pendant des mois, nos équipes se sont entraînées à analyser des motions complexes en moins de 15 minutes.<br><br>Lors de la finale de 2021, la tension était palpable. Chaque argument devait être pesé, chaque envolée lyrique justifiée. Cette victoire a marqué un tournant pour La Tribune, prouvant que l'IÉSEG a sa place parmi l'élite de l'éloquence française. Ce succès repose sur une méthode de travail collective et un soutien indéfectible entre les membres du bureau et les orateurs.",
-            image: "https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=1200"
+            image: "https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=1200",
+            youtubeId: "58jW4v75l6E" // Exemple de vidéo de débat
           },
           {
             id: "rhetorique-et-climat",
@@ -112,6 +115,25 @@
         const container = document.getElementById('article-content');
 
         if (article) {
+            // Logique d'affichage de la vidéo
+            let videoEmbed = '';
+            if (article.youtubeId) {
+                videoEmbed = `
+                    <div class="my-12">
+                        <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl bg-black">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${article.youtubeId}" 
+                                title="${article.title}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen 
+                                class="absolute top-0 left-0 w-full h-full">
+                            </iframe>
+                        </div>
+                    </div>
+                `;
+            }
+
             container.innerHTML = `
                 <div class="relative h-[60vh] w-full">
                     <img src="${article.image}" class="w-full h-full object-cover">
@@ -130,6 +152,7 @@
                 <article class="max-w-4xl mx-auto px-4 py-16 md:py-24">
                     <div class="prose prose-lg md:prose-xl max-w-none">
                         <p class="text-xl md:text-2xl text-gray-500 italic mb-12 border-l-4 border-gold pl-6 leading-relaxed">${article.excerpt}</p>
+                        ${videoEmbed}
                         <div class="text-gray-800 leading-relaxed space-y-8 text-lg md:text-xl">${article.content}</div>
                     </div>
                     <div class="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center">
