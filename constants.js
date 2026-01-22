@@ -86,8 +86,8 @@ export const MOCK_ARTICLES = [
     category: "Débat",
     author: "Erwan COGAT",
     excerpt: "Entre adrénaline et structure rigoureuse, retour sur les coulisses de notre victoire au championnat de France 2021.",
-    content: "Le championnat de France de débat parlementaire n'est pas qu'une affaire de mots, c'est une épreuve d'endurance mentale. Pendant des mois, nos équipes se sont entraînées à analyser des motions complexes en moins de 15 minutes.<br><br>Lors de la finale de 2021, la tension était palpable. Chaque argument devait être pesé, chaque envolée lyrique justifiée. Cette victoire a marqué un tournant pour La Tribune, prouvant que l'IÉSEG a sa place parmi l'élite de l'éloquence française. Ce succès repose sur une méthode de travail collective et un soutien indéfectible entre les membres du bureau et les orateurs.",
-    coverImage: "https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=1200",
+    content: "Lors de la finale de 2021, la tension était palpable. Chaque argument devait être pesé, chaque envolée lyrique justifiée. Cette victoire a marqué un tournant pour La Tribune, prouvant que l'IÉSEG a sa place parmi l'élite de l'éloquence française. Ce succès repose sur une méthode de travail collective et un soutien indéfectible entre les membres du bureau et les orateurs.",
+    coverImage: "https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Panthéon.jpg",
     date: "05/02/2024",
     youtubeId: "4nelubZ7Zf4"
   },
