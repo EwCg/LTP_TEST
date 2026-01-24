@@ -70,33 +70,18 @@ export const GALLERY_IMAGES = [
 ];
 
 export const MOCK_ARTICLES = [
-  /* 
-     POUR AJOUTER UN ARTICLE : Copiez le bloc ci-dessous et collez-le avant le premier article.
-     {
-        slug: "mon-nouvel-article",
-        title: "Titre de l'article",
-        category: "Société",
-        author: "Votre Nom",
-        excerpt: "Résumé court...",
-        content: "Contenu complet...",
-        coverImage: "Lien vers l'image",
-        date: "JJ/MM/AAAA",
-        youtubeId: "" // Optionnel
-     },
-  */
   {
-    slug: "debat-parlementaire-sport-haut-niveau",
-    title: "L'Improvisation : Le saut dans le vide",
-    category: "Rhétorique",
+    slug: "art-de-la-contradiction",
+    title: "L'Art de la Contradiction : Pourquoi débattre est essentiel",
+    category: "Rhétorique", // Ajouté pour le filtre
     author: "Erwan COGAT",
-    excerpt: "Entre adrénaline et structure rigoureuse, retour sur les coulisses de notre victoire au championnat de France 2021.",
-    content: "Hello",
-    coverImage: "https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Panthéon.jpg",
-    date: "15/03/2025"
-    youtubeId: "4nelubZ7Zf4"
+    excerpt: "Dans un monde de plus en plus polarisé, apprendre à écouter l'autre et à construire une réponse argumentée est une compétence vitale.",
+    content: "Le débat n'est pas une simple confrontation d'ego, mais une quête collective de vérité. À La Tribune, nous croyons que la contradiction est le moteur de la pensée critique. En apprenant à défendre des positions qui ne sont pas nécessairement les nôtres, nous développons une empathie intellectuelle indispensable.<br><br>Le débat parlementaire nous force à structurer notre pensée sous pression, à écouter activement l'adversaire pour identifier les failles de son raisonnement, et à y répondre avec élégance et précision. C'est cette école de la rigueur que nous transmettons chaque semaine à nos membres.",
+    coverImage: "https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/socrates.jpg",
+    date: "12/03/2024"
   },
   {
-    slug: "debat-parlementaire-sport-haut-niveau11",
+    slug: "debat-parlementaire-sport-haut-niveau",
     title: "Le Débat Parlementaire : Un sport de haut niveau",
     category: "Débat",
     author: "Erwan COGAT",
@@ -105,16 +90,6 @@ export const MOCK_ARTICLES = [
     coverImage: "https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/Panthéon.jpg",
     date: "05/02/2025",
     youtubeId: "4nelubZ7Zf4"
-  },
-  {
-    slug: "art-de-la-contradiction",
-    title: "L'Art de la Contradiction : Pourquoi débattre est essentiel",
-    category: "Rhétorique",
-    author: "Erwan COGAT",
-    excerpt: "Dans un monde de plus en plus polarisé, apprendre à écouter l'autre et à construire une réponse argumentée est une compétence vitale.",
-    content: "Le débat n'est pas une simple confrontation d'ego, mais une quête collective de vérité. À La Tribune, nous croyons que la contradiction est le moteur de la pensée critique. En apprenant à défendre des positions qui ne sont pas nécessairement les nôtres, nous développons une empathie intellectuelle indispensable.<br><br>Le débat parlementaire nous force à structurer notre pensée sous pression, à écouter activement l'adversaire pour identifier les failles de son raisonnement, et à y répondre avec élégance et précision. C'est cette école de la rigueur que nous transmettons chaque semaine à nos membres.",
-    coverImage: "https://raw.githubusercontent.com/EwCg/La_Tribune_Resources/main/socrates.jpg",
-    date: "12/03/2024"
   },
   {
     slug: "rhetorique-et-climat",
